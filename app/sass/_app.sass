@@ -1,0 +1,545 @@
+a
+	text-decoration: none
+	color: $w
+	&:hover
+		color: $main
+
+.wrapper
+	+gdef(to bottom, #0a2345, #010103)
+
+.content
+	padding: 0 $content-padding
+	+r(1000)
+		padding: 0 15px
+
+.animated
+	&.fadeInLeft,
+	&.fadeInRight
+		animation-name: none !important
+		transition: none !important
+
+.hero
+	&__nav
+		+pf
+		left: 0
+		right: 0
+		top: 0
+		bottom: 0
+		background: rgba(shade($main, 80%), .87)
+		padding: $content-padding/2 $content-padding
+		opacity: 0
+		visibility: hidden
+		transition: opacity $t, visibility $t
+		z-index: 999
+		height: 100%
+		max-height: 100vh
+		overflow-y: auto
+		&.is-active
+			opacity: 1
+			visibility: visible
+		a
+			display: block
+			padding: 10px 0
+			font-size: 20px
+			+monb
+			&:hover,
+			&.is-active
+				color: lighten($main, 20%)
+			+r(1000)
+				font-size: 14px
+		button
+			+pf
+			top: $hero-top + 33px
+			right: $content-padding
+			width: 50px
+			height: 50px
+			background-color: transparent
+			border: 0
+			cursor: pointer
+			transition: transform $t
+			+r(1000)
+				right: 15px
+				top: $hero-top/2
+			&:hover
+				transform: rotate(180deg)
+			span
+				+pa
+				background: $w
+				width: 50px
+				height: 2px
+				border-radius: 2px
+				left: 0
+				&:nth-of-type(1)
+					transform: rotate(45deg)
+				&:nth-of-type(2)
+					transform: rotate(-45deg)
+	&__top
+		+df
+		justify-content: space-between
+		align-items: center
+		margin-bottom: 180px
+		padding-top: $hero-top
+	&__logo
+		display: inline-block
+		font-size: 30px
+		line-height: 67px
+		+monb
+		&:before
+			+c
+			+pr
+			top: 20px
+			display: inline-block
+			background-image: url('../images/logo.png')
+			background-repeat: no-repeat
+			width: 83px
+			height: 67px
+		&:hover
+			color: $w
+	&__mobile
+		&-btn
+			width: 38px
+			height: 30px
+			background-color: transparent
+			border: 0
+			+pr
+			top: 13px
+			cursor: pointer
+			opacity: 1
+			visibility: visible
+			transition: opacity $t, visibility $t
+			span
+				+pa
+				width: 100%
+				height: 2px
+				background: #2a5ea4
+				border-radius: 3px
+				left: 0
+				&:nth-of-type(1)
+					top: 0
+				&:nth-of-type(2)
+					top: 50%
+					transform: translate(0, -50%)
+				&:nth-of-type(3)
+					bottom: 0
+			&.is-active
+				opacity: 0
+				visibility: hidden
+	&__info
+		text-align: center
+		margin-bottom: $section-gap
+		+r(1000)
+			margin-bottom: $section-gap/2
+	&__text
+		margin-bottom: 75px
+	&__images
+		background-image: url('../images/waves.png')
+		background-size: cover
+		background-position: 50% 0
+		background-repeat: no-repeat
+	&__img
+		+df
+		justify-content: space-between
+		align-items: center
+		flex-wrap: wrap
+		+r(1000)
+			text-align: center
+			flex-direction: column
+		img
+			width: 20%
+			box-shadow: 0 0 120px rgb(5, 26, 55)
+			margin-bottom: $item-gap
+			transition: box-shadow $t
+			&:hover
+				box-shadow: 0 0 120px rgba($main, 1)
+			&:last-child
+				margin-bottom: 0
+			&:nth-of-type(2)
+				width: 25%
+			+r(1000)
+				width: auto !important
+				max-width: 100% !important
+
+.btn
+	display: block
+	border: 1px solid $main
+	min-width: 170px
+	padding: 0 10px
+	text-align: center
+	+monb
+	color: $w
+	border-radius: 30px
+	height: 40px
+	line-height: 40px
+	&__inline
+		display: inline-block
+	&__transparent
+		background-color: transparent
+
+.main
+	&__title
+		font-size: 48px
+		span
+			color: $main
+		+r(1000)
+			font-size: 28px
+	&__text
+		color: #485c75
+		+lh(36, 14)
+		+monb
+		&.big
+			font-size: 18px
+			+lh(36, 18)
+		&.blue
+			color: $main
+
+.features
+	.btn
+		+r(1000)
+			+pr
+			left: 50%
+			transform: translate(-50%, 0)
+	&__headset
+		+df
+		justify-content: space-between
+		+r(1000)
+			display: block
+			padding: 0 15px
+			margin-bottom: $item-gap*2
+	&__h
+		&-left,
+		&-right
+			width: 50%
+			+df
+			justify-content: center
+			height: 75vmin
+			min-height: 600px
+			padding: $content-padding/2
+			+r(1000)
+				width: 100%
+				display: block
+				padding: 0
+				min-height: auto
+				height: auto
+		&-left
+			background-size: 100%
+			background-position: 50% 50%
+			background-repeat: no-repeat
+			+r(1000)
+				height: 80vmin
+				background-size: contain
+				background-position: 50% 100%
+				margin-bottom: $item-gap
+		&-right
+			align-items: center
+			.features__title
+				margin-bottom: 60px
+				+r(1000)
+					text-align: center
+					margin-bottom: 10px
+			.features__text
+				margin-bottom: 60px
+				+r(1000)
+					margin-bottom: 10px
+	&__iphone
+		+df
+		justify-content: space-between
+		+pr
+		+r(1000)
+			display: block
+	&__i
+		&-left,
+		&-right
+			width: 33.3%
+			+r(1170)
+				width: 50%
+			+r(1000)
+				width: 100%
+		&-center
+			+pa
+			left: 50%
+			bottom: 0
+			transform: translate(-50%, 0)
+			+r(1170)
+				display: none
+		&-left
+			padding-right: 10vmin
+			text-align: right
+			+r(1000)
+				padding: 0
+				text-align: left
+		&-right
+			padding-left: 10vmin
+			+r(1000)
+				padding: 0
+		&-image
+			text-align: center
+			+pr
+			z-index: 1
+			img
+				width: auto
+				max-width: 100%
+	&__icon
+		margin-bottom: 22px
+		display: block
+		svg
+			width: 50px
+			height: 50px
+			+r(1000)
+				display: block
+				margin: 0 auto
+	&__title
+		font-size: 24px
+		margin-bottom: 5px
+		+r(1000)
+			text-align: center
+	&__text
+		margin-bottom: 80px
+		+r(1170)
+			margin-bottom: $item-gap
+	&__item
+		+pr
+		z-index: 2
+
+section
+	padding-bottom: $section-gap
+	+r(1000)
+		padding-bottom: $section-gap/2
+
+.perspective
+	+df
+	justify-content: space-between
+	min-height: 600px
+	+r(1000)
+		display: block
+		padding: 0 15px
+		+pr
+		min-height: 400px
+	&__icon
+		display: block
+		@extend .features__icon
+	&__left,
+	&__right
+		width: 50%
+		+df
+		align-items: center
+		+r(1000)
+			width: 100%
+	&__left
+		padding-right: 10vmin
+		padding-left: $content-padding
+		+r(1000)
+			padding: 0
+	&__right
+		padding-left: 10vmin
+		+r(1000)
+			padding: 0
+	&__title
+		font-size: 48px
+		margin-bottom: 10px
+		+r(1000)
+			text-align: center
+			font-size: 24px
+	&__image
+		height: 100%
+		width: 100%
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: 100% 50%
+		+r(1000)
+			+pa
+			height: 50vmin
+			opacity: .3
+			top: 50%
+			transform: translate(0, -50%)
+			right: 0
+
+.options
+	+gdef(to bottom, #061427, #061020)
+	padding-bottom: 0
+	margin-bottom: $section-gap
+	+r(1000)
+		margin-bottom: $section-gap/2
+	.slick-slider
+		-webkit-user-select: text
+		-khtml-user-select: text
+		-moz-user-select: text
+		-ms-user-select: text
+		user-select: text
+	.slick-list.draggable
+		-webkit-user-select: none
+		-khtml-user-select: none
+		-moz-user-select: none
+		-ms-user-select: none
+		user-select: none
+	.slick-dots
+		+pa
+		left: 50%
+		transform: translate(-50%, 0)
+		bottom: 20px
+		+clr
+		li
+			float: left
+			margin-left: 13px
+			&:first-child
+				margin-left: 0
+			button
+				font-size: 0
+				border: 0
+				background-color: transparent
+				border: 2px solid #213a60
+				width: 13px
+				height: 13px
+				border-radius: 50%
+				cursor: pointer
+				transition: background-color $t
+			&.slick-active
+				button
+					background-color: #335a95
+					border-color: transparent
+	&__slider
+		+pr
+	&__item
+		background-size: cover
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		min-height: 50vmin
+		padding: 60px 0
+		>
+			.content
+				min-height: 50vmin
+				+df
+				+cc
+				padding: 0 $content-padding*2.5
+				+r(1000)
+					padding: 0 15px
+	&__info
+		text-align: center
+	&__text
+		font-size: 24px
+		line-height: 48px
+		color: #66778e
+		margin-bottom: 40px
+		transform: scale(.9)
+		transition: transform .9s linear
+		+r(1000)
+			font-size: 14px
+			line-height: 28px
+	.slick-active
+		.options__text
+			transform: scale(1)
+		.options__about
+			opacity: 1
+			transform: translate(0, 0)
+			transition-delay: .7s
+	&__about
+		+df
+		justify-content: center
+		align-items: center
+		opacity: 0
+		transform: translate(0, 10px)
+		transition: opacity .9s linear, transform .9s linear
+	&__photo
+		width: 38px
+		height: 38px
+		img
+			display: inline-block
+			width: 100%
+			border-radius: 50%
+	&__name
+		margin-left: 18px
+		color: #66778e
+	&__position
+		color: #213a61
+		margin-left: 5px
+
+.download
+	&__images
+		+df
+		justify-content: center
+		align-items: center
+		max-width: 800px
+		margin: 0 auto $section-gap
+		overflow: hidden
+		+r(1000)
+			margin: 0 auto $section-gap/2
+		+r(890)
+			margin: 0
+			display: block
+			flex-wrap: wrap
+			img
+				display: block
+				margin: 0 auto $item-gap
+				&:last-of-type
+					margin-bottom: 0
+		img
+			max-width: 100%
+			+r(600)
+				&:nth-of-type(1),
+				&:nth-of-type(3)
+					display: none
+	&__title,
+	&__text
+		text-align: center
+		max-width: 800px
+		margin: 0 auto
+	&__title
+		font-size: 36px
+		margin-bottom: 50px
+		+r(1000)
+			margin-bottom: 25px
+	&__text
+		margin-bottom: 120px
+		+r(1000)
+			margin-bottom: $item-gap
+	&__btn
+		+pr
+		left: 50%
+		transform: translate(-50%, 0)
+
+.footer
+	+pr
+	padding: $section-gap/2 0
+	&:before
+		+c
+		+pa
+		top: 0
+		left: $content-padding
+		right: $content-padding
+		background: #0d1624
+		height: 1px
+	>
+		.content
+			+df
+			justify-content: space-between
+			+r(1000)
+				display: block
+	&__left,
+	&__right
+		width: 50%
+		+r(1000)
+			width: 100%
+			text-align: center
+	&__menu
+		+clr
+		+r(1000)
+			margin-bottom: 10px
+		a
+			color: $main
+			+monb
+			float: left
+			margin-left: 11px
+			&:first-child
+				margin-left: 0
+			&:hover
+				color: $w
+			+r(1000)
+				float: none
+				text-align: center
+				display: block
+				padding: 10px 0
+	&__copyright
+		color: $main
+		+monb
+		text-align: right
+		+r(1000)
+			text-align: center
